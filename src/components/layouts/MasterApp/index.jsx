@@ -5,7 +5,13 @@ import { useRouter } from "next/router";
 const MasterApp = (props) => {
   const { children } = props;
   const { pathname } = useRouter();
-  const disableNavbar = ["/auth/login", "/auth/register"]; // Disable route jika mengakses route tsb
+  const disableNavbar = [
+    "/auth/login",
+    "/auth/register",
+    "/_error",
+    "/404",
+    "/500",
+  ]; // Disable route jika mengakses route tsb
 
   return (
     <main>
