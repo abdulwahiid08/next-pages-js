@@ -1,5 +1,14 @@
+import Head from "next/head";
+
 const LoginViews = () => {
-  return <div>Login Page</div>;
+  return (
+    <>
+      <Head>
+        <title>Login Page</title>
+      </Head>
+      <div>Login Page</div>
+    </>
+  );
 };
 
 export default LoginViews;
