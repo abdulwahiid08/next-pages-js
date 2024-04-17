@@ -2,11 +2,16 @@ import "@/styles/globals.css";
 
 import Navbar from "@/components/layouts/Navbar";
 import MasterApp from "@/components/layouts/MasterApp";
-
-export default function App({ Component, pageProps }) {
+import { SessionProvider } from "next-auth/react";
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   return (
-    <MasterApp>
-      <Component {...pageProps} />
-    </MasterApp>
+    <SessionProvider session={session}>
+      <MasterApp>
+        <Component {...pageProps} />
+      </MasterApp>
+    </SessionProvider>
   );
 }
